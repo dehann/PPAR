@@ -1,0 +1,11 @@
+package ppar;
+
+struct request_t {
+    int64_t utime;
+
+    //fingerprint the outgoing request -- receive message of same type with same fingerprint
+    int32_t reqRndID;
+    string reqOrig;
+
+    string str;
+}
