@@ -15,6 +15,7 @@ check_for_python()
 
 # this may be duplicating cmake functions
 set(_lcmtypes_python_dir ${PROJECT_SOURCE_DIR}/build/include/lcmtypes/)
+execute_process(COMMAND mkdir -p ${_lcmtypes_python_dir})
 
 #set(${TARGET_DIR} )
 
