@@ -1,4 +1,5 @@
 
+set(LCM_GEN_EXECUTABLE lcm-gen)
 
 macro(lcmtypes_get_types msgvar)
     # get a list of all LCM types
@@ -12,17 +13,14 @@ macro(lcmtypes_get_types msgvar)
     endforeach(_msg)
 endmacro()
 
-function(lcmgen_for_python)
+function(gen_python_lcmtypes)
     lcmtypes_get_types(_lcmtypes)
     list(LENGTH _lcmtypes _num_lcmtypes)
     if(_num_lcmtypes EQUAL 0)
         return()
     endif()
 
-    # generate Python bindings for LCM types
-    execute_process(COMMAND ${LCM_GEN_EXECUTABLE} --lazy -p ${_lcmtypes} --ppath ${_lcmtypes_python_dir})
-
     # run lcm-gen at compile time
     add_custom_target(lcmgen_python ALL
-        COMMAND sh -c '${LCM_GEN_EXECUTABLE} --lazy -p ${_lcmtypes} --ppath ${_lcmtypes_python_dir}')
+        COMMAND sh -c '${LCM_GEN_EXECUTABLE} --lazy -p ${_lcmtypes} --ppath ${_lcmtypes_install_dir}')
 endfunction()
