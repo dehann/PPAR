@@ -1,6 +1,6 @@
 package ppar;
 
-struct request_t {
+struct msg_t {
     int64_t utime;
 
     //fingerprint the outgoing request -- receive message of same type with same fingerprint
