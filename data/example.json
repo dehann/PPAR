@@ -1,0 +1,39 @@
+{
+  "windowWidth" : 1024,
+  "windowHeight" : 800,
+
+  "plots" : [
+    {
+      "ymin" : -5.0,
+      "ymax" : 5.0,
+      "timeWindow" : 5.0,
+
+      "signals" : [
+        {
+          "channel" : "ROBOT_STATE",
+          "messageType" : "state_t",
+          "fieldName" : "joint_position",
+          "arrayKeys" : "R_ARM"
+        },
+
+        {
+          "channel" : "NJORD_STATE",
+          "messageType" : "state_t",
+          "fieldName" : "force_torque.force_z",
+          "arrayKeys" : "R_ARM"
+        }
+      ]
+    },
+
+    {
+      "signals" : [
+        {
+          "channel" : "TRUE_STATE",
+          "messageType" : "state_t",
+          "fieldName" : "joint_position",
+          "arrayKeys" : "R_ARM"
+        }
+      ]
+    }
+  ]
+}
