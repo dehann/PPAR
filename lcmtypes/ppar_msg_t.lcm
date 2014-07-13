@@ -3,9 +3,12 @@ package ppar;
 struct msg_t {
     int64_t utime;
 
-    //fingerprint the outgoing request -- receive message of same type with same fingerprint
-    int32_t reqRndID;
-    string reqOrig;
+    int8_t RE_VERSION;
 
-    string str;
+    //fingerprint the outgoing request -- receive message of same type with same fingerprint
+    int32_t requeID;
+    string  requeOrig;
+    string  replyOrig;
+
+    string datastr;
 }

@@ -1,8 +1,10 @@
 {
-  "windowWidth" : 1024,
-  "windowHeight" : 800,
-
-  "plots" : [
+   "sensors" : {
+     "microstrain" : {
+       "dt" : 0.01
+     }
+   },
+   "plots" : [
     {
       "ymin" : -5.0,
       "ymax" : 5.0,
@@ -35,5 +37,8 @@
         }
       ]
     }
-  ]
+  ],
+
+  "windowWidth" : 1024,
+  "windowHeight" : 800
 }

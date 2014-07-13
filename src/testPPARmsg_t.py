@@ -7,8 +7,12 @@ lc = lcm.LCM()
 
 msg = msg_t()
 msg.utime = int(time.time() * 1000000)
-msg.reqRndID = 1
-msg.reqOrig = "testPPARmsg_t.py"
-msg.str = "[\"plots\"][1][\"signals\"][0][\"channel\"]"
+msg.RE_VERSION = 1
+msg.requeID = 1
+msg.requeOrig = "testPPARmsg_t.py"
+msg.datastr = "[\"plots\"][1][\"signals\"][0][\"channel\"]"
+msg.datastr = "[\"gravity\"]"
+msg.datastr = "[\"sensors\"][\"microstrain\"][\"dt\"]"
+
 
 lc.publish("PPAR_REQUEST_MSIM", msg.encode())
