@@ -1,6 +1,10 @@
 PPAR
 ====
 
+Basically an LCM wrapper for querying values from a json file. The initial purpose of this little project is to standardize parameter distribution amount multiple projects.
+
+Write your parameters in human readible json file format, point the pparService.py at this file and querying the json file will be available over LCM. This prevents me from hardcoding parameters over and over in several scirps or projects -- especially in different languages.
+
 Dependencies
 ------------
 
@@ -49,4 +53,8 @@ Running the service
 
 At present the python program runs directly from in src directory, which isn't great, but this has been a quick turnaround little project -- more later...
 
+::
+     
+     cd PPAR/src
+     python pparService.py ??/some_param_file.json
 
