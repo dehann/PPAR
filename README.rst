@@ -60,3 +60,19 @@ At present the python program runs directly from in src directory, which isn't g
      cd PPAR/src
      python pparService.py ??/some_param_file.json
 
+The json file
+-------------
+
+At minimum, the json file should include the LCM channel names with which requests and replies will be sent. For example, you'll see data/example.json has at least:
+
+::
+    
+    {
+      "ppar" : {
+        "lcm" : {
+          "reply-channel" : "PPAR_REPLY_EXAMPLE",
+          "request-channel" : "PPAR_REQUEST_EXAMPLE"
+        }
+      }
+    }
+
