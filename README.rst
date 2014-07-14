@@ -5,6 +5,8 @@ Basically an LCM wrapper for querying values from a json file. The initial purpo
 
 Write your parameters in human readible json file format, point the pparService.py at this file and querying the json file will be available over LCM. This prevents me from hardcoding parameters over and over in several scirps or projects -- especially in different languages.
 
+At present there is little error checking and robustness built into this code -- will be added as dependcy on ppar grows in the future.
+
 Dependencies
 ------------
 

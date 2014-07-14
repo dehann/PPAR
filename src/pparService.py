@@ -1,13 +1,19 @@
 import time
+import sys
 import json
 import lcm
 from ppar import msg_t
 
-
-json_data=open('../data/example.json')
-jsonFileContent = json.load(json_data)
-json_data.close()
-print "Data loaded from example.json"
+with open(sys.argv[1], 'r') as my_file:
+    jsonFileContent = json.load(my_file)
+    #print(my_file.read())
+    my_file.close()
+    print "Data loaded from " + str(sys.argv[1])
+   
+#json_data=open('../data/example.json')
+#jsonFileContent = json.load(json_data)
+#json_data.close()
+#print "Data loaded from example.json"
 
 pubchannel = ""
 
