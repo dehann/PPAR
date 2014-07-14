@@ -38,6 +38,7 @@ def my_handler(channel, data):
     msg = msg_t.decode(data)
     print("Received message on channel \"%s\"" % channel)
     print("   timestamp   = %s" % str(msg.utime))
+    print(" INTERFACE VER = %s" % str(msg.RE_VERSION))
     print("   random ID   = %s" % str(msg.requeID))
     print("   reqOrig     = %s" % str(msg.requeOrig))
     print("   request     = %s" % str(msg.datastr))
