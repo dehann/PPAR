@@ -1,5 +1,12 @@
 {
-   "sensors" : {
+  "constants" : {
+    "earth" : {
+      "gravity" : 9.8032,
+      "radius" : 6200000
+    }
+  },
+
+  "sensors" : {
      "microstrain" : {
        "dt" : 0.01
      }
