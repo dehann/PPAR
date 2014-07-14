@@ -9,6 +9,8 @@ jsonFileContent = json.load(json_data)
 json_data.close()
 print "Data loaded from example.json"
 
+pubchannel = ""
+
 def getFromJsonFile(reqstr):
     global jsonFileContent
     try:
@@ -23,7 +25,8 @@ def sendReplyMsg(old, result):
     old.replyOrig = "pparService.py"
     old.datastr = result
     global lc
-    lc.publish("PPAR_REPLY_MSIM", old.encode())
+    global pubchannel
+    lc.publish(pubchannel, old.encode())
 
 def my_handler(channel, data):
     msg = msg_t.decode(data)
@@ -38,9 +41,14 @@ def my_handler(channel, data):
         result = str(getFromJsonFile(reqstr))
         sendReplyMsg(msg, result)
 
+subchannel = getFromJsonFile("[\"ppar\"][\"lcm\"][\"request-channel\"]")
+pubchannel = getFromJsonFile("[\"ppar\"][\"lcm\"][\"reply-channel\"]")
+
 lc = lcm.LCM()
-subscription = lc.subscribe("PPAR_REQUEST_MSIM", my_handler)
-print "Subscribed to : PPAR_REQUEST_MSIM"
+subscription = lc.subscribe(subchannel, my_handler)
+
+print "Subscribed to : " + subchannel
+print "Reply channel set to : " + pubchannel
 
 try:
     while True:

@@ -1,4 +1,11 @@
 {
+  "ppar" : {
+    "lcm" : {
+      "reply-channel" : "PPAR_REPLY_EXAMPLE",
+      "request-channel" : "PPAR_REQUEST_EXAMPLE"
+    }
+  },
+  
   "constants" : {
     "earth" : {
       "gravity" : 9.8032,
